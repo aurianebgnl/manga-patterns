@@ -1,4 +1,5 @@
-public class MainCharacterImpl implements IMainCharacter {
+package src.model;
+public class MainCharacterImpl implements MainCharacter {
 
     private String nom;
     private String prenom;

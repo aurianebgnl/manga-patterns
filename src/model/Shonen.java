@@ -1,8 +1,9 @@
+package src.model;
 public class Shonen extends Manga{
 
-    public Shonen(String titre, IMainCharacter mainCharacterPrincipal) {
+    public Shonen(String titre, MainCharacter mainCharacter) {
         this.titre = titre;
-        this.mainCharacterPrincipal = mainCharacterPrincipal;
+        this.mainCharacter = mainCharacter;
     }
 
     @Override

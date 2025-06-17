@@ -1,7 +1,8 @@
+package src.model;
 public class Shojo extends Manga{
-    public Shojo(String titre, IMainCharacter mainCharacterPrincipal) {
+    public Shojo(String titre, MainCharacter mainCharacter) {
         this.titre = titre;
-        this.mainCharacterPrincipal = mainCharacterPrincipal;
+        this.mainCharacter = mainCharacter;
     }
 
     @Override
