@@ -6,10 +6,13 @@ public class MangaFactory {
     // static = l'instance est partagée entre toutes les classes qui utilisent MangaFactory
     private static MangaFactory singleton; // on appelle l'attribut singleton comme on aurait pu l'appeler instance
 
+    // on initialise l'instance de repository
+    private IRepository repository;
+
     // On appelle le constructeur en privé pour empêcher l'instanciation directe de la classe
     private MangaFactory(){
         // On initialise le repository en mémoire. comme MangaFactory est un singleton, il n'y a qu'une seule instance de repository
-        
+        repository = createRepository(true);
     }
 
     // ici, on crée la méthode statique publique qui permet de récupérer l'instance unique de MangaFactory
@@ -40,6 +43,18 @@ public class MangaFactory {
             default:
                 throw new IllegalArgumentException("Type de manga inconnu: " + type);
         }
+    }
+
+    private IRepository createRepository(boolean inMemory){
+        if (inMemory){
+            return new MemoryRepository();
+        }else{
+            return null;
+        }
+    }
+
+    public IRepository getRepository(){
+        return repository;
     }
 
 

@@ -17,6 +17,9 @@ public class Main {
             Manga jujustsuKaisen = singletonMangaFactory.createManga(TypeManga.SHONEN, "Jujutsu Kaisen","Itadori", "Yūji");
             Manga cardcaptorSakura = singletonMangaFactory.createManga(TypeManga.SHOJO, "Cardcaptor Sakura", "Kinomoto", "Sakura");
 
+            singletonMangaFactory.getRepository().save(jujustsuKaisen);
+            singletonMangaFactory.getRepository().save(cardcaptorSakura);
+
             System.out.println(jujustsuKaisen.getDescription());
             System.out.println(cardcaptorSakura.getDescription());
 
